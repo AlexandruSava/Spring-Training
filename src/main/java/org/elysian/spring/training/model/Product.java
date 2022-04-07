@@ -32,7 +32,7 @@ public class Product extends AbstractEntity {
     @Column(name = "price", unique = false, nullable = false, insertable = true, updatable = true, length = 10)
     private double price;
 
-    @ManyToOne(targetEntity = Section.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Section.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "sectionId")
     @JsonIgnore
     private Section section;
