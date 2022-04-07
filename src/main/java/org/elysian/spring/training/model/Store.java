@@ -7,7 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
+import javax.persistence.PostPersist;
 import javax.persistence.SequenceGenerator;
 import java.util.Objects;
 import java.util.Set;
@@ -33,9 +33,9 @@ public class Store {
     @OneToMany(mappedBy = "store", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Section> sections;
 
-    @PrePersist
-    public void beforeSave() {
-        System.out.println("Saving the Store " + getId());
+    @PostPersist
+    public void afterSave() {
+        System.out.println("Saved the Store " + getId());
     }
 
     public int getId() {

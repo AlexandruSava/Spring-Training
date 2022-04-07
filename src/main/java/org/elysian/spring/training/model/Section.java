@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 import java.util.Objects;
 import java.util.Set;
 
