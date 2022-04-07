@@ -1,5 +1,7 @@
 package org.elysian.spring.training.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,6 +33,7 @@ public class Section extends AbstractEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "storeId")
+    @JsonIgnore
     private Store store;
 
     // 'mappedBy' tells the persistence provider that the join column is in the Product table

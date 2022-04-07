@@ -32,6 +32,7 @@ public class Product extends AbstractEntity {
 
     @ManyToOne(targetEntity = Section.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "sectionId")
+    @JsonIgnore
     private Section section;
 
     protected Product() {
