@@ -83,7 +83,7 @@ public class ProductServiceTest {
 
         when(productRepository.findById(1)).thenReturn(Optional.of(product));
 
-        final Product retrievedProduct = productService.get(1);
+        final Product retrievedProduct = productService.get(productId);
 
         assertNotNull(retrievedProduct);
         assertThat(retrievedProduct.getId(), is(productId));
@@ -98,9 +98,8 @@ public class ProductServiceTest {
     }
 
     @Test
-    @DisplayName("Given a product is saved, when saving the product, then save method is called once and the response is not " +
-                 "null or empty")
-    public void givenAProductIsSaved_whenSavingTheProduct_thenSaveMethodIsCalledOnceAndResponseIsNotNullOrEmpty() {
+    @DisplayName("Given a product is saved, when saving the product, then save method is called once")
+    public void givenAProductIsSaved_whenSavingTheProduct_thenSaveMethodIsCalledOnce() {
         final int sectionId = 1;
         final String sectionName = "IT";
 
