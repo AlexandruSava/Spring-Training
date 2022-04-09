@@ -38,6 +38,10 @@ public class Store {
         System.out.println("Saved the Store " + getId());
     }
 
+    public Store() {
+
+    }
+
     public Store(int id, String name, String location) {
         this.id = id;
         this.name = name;
